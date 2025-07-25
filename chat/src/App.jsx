@@ -1,4 +1,3 @@
-import './App.css'
 import {Box, IconButton, Paper, TextField, Typography} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import ChatMessage from "./components/ChatMessage.jsx";
@@ -71,7 +70,7 @@ function App() {
               return updated;
             });
           } catch (err) {
-            console.error("Failed to parse JSON chunk:", line);
+            console.error(err);
           }
         }
       }
@@ -131,7 +130,7 @@ function App() {
             <IconButton
               type="submit"
               color="primary"
-              disabled={!userInput || messages[messages.length - 1]?.role === 'user'}
+              disabled={!userInput || messages[messages.length - 1]?.role === 'user' || loading}
             >
               <SendIcon/>
             </IconButton>
