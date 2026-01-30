@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM3 Integration</title>
+  <style>
+    .hidden { display: none; }
+    .mask-item { cursor: pointer; display: inline-block; margin: 5px; }
+    .mask-item.selected { outline: 3px solid blue; }
+    .mask-item img { max-width: 200px; }
+    #viewer-canvas { width: 100%; height: 500px; }
+    #preview { max-width: 400px; max-height: 300px; }
+    #error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>SAM3 Model Showcase</h1>
+
+  <section id="upload-phase">
+    <h2>1. Upload Image</h2>
+    <input type="file" id="file-input" accept=".jpg,.jpeg,.png">
+    <p id="error" class="hidden"></p>
+    <div id="preview-container" class="hidden">
+      <img id="preview">
+      <br><br>
+      <button id="get-masks-btn">Get Masks</button>
+    </div>
+  </section>
+
+  <section id="masks-phase" class="hidden">
+    <h2>2. Select a Mask</h2>
+    <button id="back-to-upload">Back</button>
+    <div id="masks-container"></div>
+    <br>
+    <button id="convert-btn" disabled>Convert to 3D</button>
+  </section>
+
+  <section id="viewer-phase" class="hidden">
+    <h2>3. 3D View</h2>
+    <button id="back-to-masks">Back</button>
+    <div id="viewer-canvas"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+  <script src="ply-viewer.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
