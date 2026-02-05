@@ -32,7 +32,7 @@ function showError(msg) {
 }
 
 // API helpers
-async function apiCall(params, timeout = 30000) {
+async function apiCall(params, timeout = 120000) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
 
