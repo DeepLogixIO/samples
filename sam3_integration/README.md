@@ -4,12 +4,16 @@ Image to 3D model using SAM3 mask generation.
 
 ## Setup
 
-1. Get your API token at [deeplogix.io/profile](https://deeplogix.io/profile)
-2. Open `main.js` and paste your token at the very top of the file:
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/DeepLogixIO/samples.git && cd samples/sam3_integration
+   ```
+2. Get your API token at [deeplogix.io/profile](https://deeplogix.io/profile)
+3. Open `main.js` and paste your token at the very top of the file:
    ```js
    const TOKEN = "your-api-token-here";
    ```
-3. Open `index.html` in browser
+4. Open `index.html` in browser
 
 ## Usage
 
